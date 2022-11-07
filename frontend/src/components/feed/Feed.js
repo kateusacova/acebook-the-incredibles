@@ -1,4 +1,3 @@
-import { faImages } from '@fortawesome/free-solid-svg-icons';
 import React, { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Post from '../post/Post';
@@ -7,7 +6,7 @@ import './Feed.css';
 const Feed = ({ navigate }) => {
   const [posts, setPosts] = useState([]);
   const [message, setMessage] = useState("");
-  const [image, setImage] = useState();
+  const [image, setImage] = useState("");
   const [token, setToken] = useState(window.localStorage.getItem("token"));
 
   const loadPosts = () => {
@@ -31,7 +30,7 @@ const Feed = ({ navigate }) => {
 
   const handlePostSubmit = async (event) => {
     event.preventDefault();
-
+    setMessage("");
     if(token) fetch('/posts', {
       method: 'post',
       headers: {
@@ -48,7 +47,6 @@ const Feed = ({ navigate }) => {
         handlePopUpClosing();
       })
   }
-
   
   const handleMessageChange = (event) => {
     setMessage(event.target.value);
@@ -64,7 +62,7 @@ const Feed = ({ navigate }) => {
   }
 
   const handlePopUpClosing = () => {
-    document.querySelector(".create-post-box #post-message").value = '';
+    // document.querySelector(".create-post-box #post-message").value = '';
     document.querySelector(".popup-background").style.display = 'none';
     document.querySelector(".create-post-box").style.display = 'none';
   }
