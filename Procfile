@@ -1,1 +1,1 @@
-web:npm start
+npm --openssl-legacy-provider start
