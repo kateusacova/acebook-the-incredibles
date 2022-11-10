@@ -16,7 +16,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node App.js",
     "build": "react-scripts build",
     "heroku-postbuild": "ng build --prod",
     "test": "npm run test:unit && npm run test:feature",
