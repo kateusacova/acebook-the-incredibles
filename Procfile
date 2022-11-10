@@ -1,1 +1,0 @@
-npm --openssl-legacy-provider start
