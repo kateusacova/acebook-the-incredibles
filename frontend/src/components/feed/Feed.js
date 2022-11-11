@@ -15,7 +15,7 @@ const Feed = ({ navigate }) => {
 
   const loadPosts = () => {
     if (token) {
-      fetch("/posts", {
+      fetch("/api/posts", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -31,7 +31,7 @@ const Feed = ({ navigate }) => {
 
   const loadUser = () => {
     if (token) {
-      fetch("/sessions", {
+      fetch("/api/sessions", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -64,7 +64,7 @@ const Feed = ({ navigate }) => {
 
   const fetchApi = (url) => {
     if (token)
-    fetch("/posts", {
+    fetch("/api/posts", {
       method: "post",
       headers: {
         Authorization: `Bearer ${token}`,

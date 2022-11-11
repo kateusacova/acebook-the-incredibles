@@ -12,6 +12,13 @@ These videos complement the docs below.
 
 ## Existing Features
 
+-- build frontend into static files (instead of using frontend server)
+-- backend to serve the static files
+-- making backend requests at e.g. api/posts
+-- using single server for full stack
+
+
+
 It's already possible for a user to:
 - Sign up
 - Sign in

@@ -14,7 +14,7 @@ const CommentForm = ({ postId, profileImg, loadComments }) => {
     const handleCommentSubmit = async (event) => {
         event.preventDefault();
         console.log(postId);
-        if (token) fetch('/comments', {
+        if (token) fetch('/api/comments', {
           method: 'post',
           headers: {
             'Authorization': `Bearer ${token}`,

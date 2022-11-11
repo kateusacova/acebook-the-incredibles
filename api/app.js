@@ -18,7 +18,7 @@ app.use(express.json())
 
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "frontend/build"))); //client/build?
 
 // middleware function to check for valid tokens
 const tokenChecker = (req, res, next) => {
@@ -42,12 +42,12 @@ const tokenChecker = (req, res, next) => {
 };
 
 // route setup
-app.use("/posts", tokenChecker, postsRouter);
-app.use("/tokens", tokensRouter);
-app.use("/users", usersRouter);
-app.use("/comments", tokenChecker, commentsRouter);
-app.use("/sessions", tokenChecker, sessionsRouter);
-app.use("/likes", tokenChecker, likesRouter);
+app.use("/api/posts", tokenChecker, postsRouter);
+app.use("/api/tokens", tokensRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/comments", tokenChecker, commentsRouter);
+app.use("/api/sessions", tokenChecker, sessionsRouter);
+app.use("/api/likes", tokenChecker, likesRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

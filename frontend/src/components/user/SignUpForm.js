@@ -23,7 +23,7 @@ const SignUpForm = ({ navigate }) => {
   };
 
   const fetchApi = (url) => {
-    fetch("/users", {
+    fetch("/api/users", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

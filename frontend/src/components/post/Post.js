@@ -19,7 +19,7 @@ const Post = ({post, sessionUserId }) => {
 
   const loadComments = () => {
     if (token) {
-      fetch("/comments", {
+      fetch("/api/comments", {
         headers: {
         'Authorization': `Bearer ${token}`
         }
@@ -58,7 +58,7 @@ const Post = ({post, sessionUserId }) => {
 
   const loadLikes = () => {
     if (token) {
-      fetch("/likes", {
+      fetch("/api/likes", {
         headers: {
         'Authorization': `Bearer ${token}`
         }
@@ -81,7 +81,7 @@ const Post = ({post, sessionUserId }) => {
   const handleLikeSubmit = async (event) => {
     event.preventDefault();
   
-    if (token) fetch('/likes', {
+    if (token) fetch('/api/likes', {
       method: 'put',
       headers: {
         'Authorization': `Bearer ${token}`,
